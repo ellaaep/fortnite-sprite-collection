@@ -1,26 +1,19 @@
 # Fortnite Sprite Collection
 
-A private/local Fortnite Sprite collection tracker.
+Static personal Fortnite Sprite tracker with all sprite images stored locally.
 
-This version uses local PNG sprite images in `assets/sprites/local/`, so the collection no longer depends on Fandom/Fortnite.gg hotlinks for the visible sprite art.
+## Local PNG images
 
-## Upload to Vercel
+All 83 tracked sprite entries use files from:
 
-1. Unzip this folder.
-2. In your GitHub repo, upload the contents of this folder, not the ZIP itself.
-3. Commit the changes.
-4. Vercel will redeploy automatically.
-5. Open the Vercel site and hard refresh with `Cmd + Shift + R`.
+```text
+assets/sprites/local/
+```
 
-Your collection progress is stored in the browser using localStorage. Use Export/Import if you move to a different URL or browser.
+The 18 base PNGs were converted from the uploaded `sprites.zip`. Variant PNGs are generated locally from those base sprites so the deployed site does not depend on Fandom, fortnite.gg, or any external image host.
 
-Unofficial fan-made Fortnite tracker. Not affiliated with or endorsed by Epic Games.
+## Deploy
 
+Upload the whole folder contents to GitHub, including `assets/`, then deploy with Vercel as a static site.
 
-## Image visibility fix
-
-This version uses local PNG files from `assets/sprites/local/` and displays them immediately. Uncollected sprites are grayscale, but no longer heavily darkened.
-
-
-## Image loading note
-This build embeds all 83 sprite PNGs directly in `app.js` as data URLs. That means the collection does not depend on Fandom, fortnite.gg, or even the `assets/sprites/local` paths for the main sprite images. The assets folder is still included as a backup/source folder, but the page should display images even if external hosts block hotlinking.
+Do not upload only `index.html`; the `assets/sprites/local/` folder is required.
