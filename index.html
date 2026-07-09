@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fortnite Sprite Collection</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <meta name="theme-color" content="#090713" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-glow"></div>
+
+    <header class="hero">
+      <nav class="topbar">
+        <button id="resetBtn" class="pill danger reset-btn">Reset</button>
+        <div class="brand">
+          <span class="fortnite-wordmark">FORTNITE</span>
+          <span class="app-title">SPRITE COLLECTION</span>
+        </div>
+        <div class="actions">
+          <button id="exportBtn" class="pill ghost">Export</button>
+          <label class="pill ghost import-label">Import<input id="importInput" type="file" accept="application/json" /></label>
+        </div>
+      </nav>
+
+      <section class="hero-panel">
+        <div class="hero-copy">
+          <h1>Sprite Collection</h1>
+          <div class="hero-buttons">
+            <button id="showAllBtn" class="pill primary">All sprites</button>
+            <button id="showMissingBtn" class="pill secondary">Missing only</button>
+            <button id="showcaseBtn" class="pill secondary">Showcase wall</button>
+          </div>
+        </div>
+
+        <div class="progress-card total-card">
+          <span class="progress-label">Total collection</span>
+          <strong id="totalProgress">0 / 0</strong>
+          <div class="progress-track total"><div id="totalBar" class="progress-fill total-fill"></div></div>
+          <small id="totalPercent">0% completed</small>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section id="stats" class="stats"></section>
+
+      <section class="toolbar">
+        <div class="search-wrap">
+          <input id="searchInput" type="search" placeholder="Search sprites, variants, rarity, source…" />
+        </div>
+        <div id="variantFilters" class="filter-row"></div>
+        <div id="rarityFilters" class="filter-row"></div>
+        <div class="bulk-row">
+          <button id="markVisibleBtn" class="pill mini">Mark visible collected</button>
+          <span class="bulk-label">Quick collect:</span>
+          <div id="bulkVariantButtons" class="filter-row compact"></div>
+          <button id="clearVisibleBtn" class="pill mini danger clear-visible-btn">Clear visible</button>
+        </div>
+      </section>
+
+      <section class="section-head">
+        <div>
+          <h2 id="sectionTitle">All sprites</h2>
+          <p id="visibleCount" class="muted"></p>
+        </div>
+        <div class="view-switch" aria-label="Switch view">
+          <button class="view-btn active" data-view="collection">Collection</button>
+          <button class="view-btn" data-view="showcase">Showcase</button>
+        </div>
+      </section>
+
+      <section id="spriteGrid" class="collection-flow"></section>
+    </main>
+
+    <dialog id="spriteDialog" class="modal">
+      <form method="dialog" class="modal-card">
+        <button class="modal-close" aria-label="Close">×</button>
+        <div id="modalContent"></div>
+      </form>
+    </dialog>
+
+    <footer>
+      <p>Unofficial fan-made Fortnite Sprite tracker. Not affiliated with or endorsed by Epic Games. Drop rates are community estimates and can change after game updates.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
