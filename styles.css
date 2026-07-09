@@ -281,16 +281,16 @@ h2 { margin:0; font-size: clamp(30px, 4.5vw, 54px); line-height:.9; letter-spaci
 .sprite-image-wrap.modal::before { inset: 8px; border-width: 2px; }
 .sprite-image-wrap.mini { width: 70px; height: 70px; }
 .sprite-img { display:none; max-width:100%; max-height:100%; object-fit:contain; position:relative; z-index:2; filter: drop-shadow(0 14px 16px rgba(0,0,0,.48)) drop-shadow(0 0 18px var(--variant-main, #ffd547)); animation: float 3.2s ease-in-out infinite; }
-.image-loaded .sprite-img { display:block; }
+.image-loaded .sprite-img, .image-local .sprite-img { display:block; }
 @keyframes float { 0%,100%{ transform:translateY(0) rotate(-1deg);} 50%{ transform:translateY(-6px) rotate(1deg);} }
 .fallback-orb { display:grid; width: 86px; height: 86px; border-radius:35% 42% 40% 34%; background: var(--variant-gradient, linear-gradient(135deg,#49d6ff,#8b5cff)); place-items:center; box-shadow: inset -14px -18px 28px rgba(0,0,0,.24), 0 0 26px var(--variant-main, #ffd547); position:relative; z-index:2; }
-.image-loaded .fallback-orb { display:none; }
+.image-loaded .fallback-orb, .image-local .fallback-orb { display:none; }
 .fallback-orb span { font-size:32px; }
 .sprite-tile.locked .sprite-img,
 .sprite-tile.locked .fallback-orb,
 .showcase-item.locked .sprite-img,
-.showcase-item.locked .fallback-orb { filter: grayscale(1) brightness(.35); opacity:.55; }
-.sprite-tile.locked .sprite-image-wrap.card::before { border-color: rgba(255,255,255,.20); box-shadow:none; opacity:.38; filter: grayscale(1); }
+.showcase-item.locked .fallback-orb { filter: grayscale(1) brightness(.82) contrast(1.08); opacity:.92; }
+.sprite-tile.locked .sprite-image-wrap.card::before { border-color: rgba(255,255,255,.30); box-shadow: 0 0 13px rgba(255,255,255,.10); opacity:.76; filter: grayscale(1); }
 .sprite-name { font-weight: 950; line-height:1.02; text-align:center; font-size: 13px; min-height: 28px; display:flex; align-items:center; justify-content:center; text-shadow: 0 2px 8px rgba(0,0,0,.5); }
 .sprite-sub { display:flex; gap:5px; flex-wrap:wrap; align-items:center; justify-content:center; min-height: 22px; }
 .rarity-chip, .variant-chip { font-size: 10px; font-weight: 950; text-transform:uppercase; letter-spacing:.04em; border-radius:999px; padding:4px 7px; background:rgba(0,0,0,.35); color: color-mix(in srgb, var(--variant-main, #ffd547) 78%, white 20%); }
