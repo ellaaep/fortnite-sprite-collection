@@ -81,14 +81,16 @@ function cssVariantClass(variant) { return `variant-${variant}`; }
 function cssRarityClass(rarity) { return `rarity-${rarity}`; }
 function slugFileName(name) { return name.replace(/ /g, '_'); }
 
-function fandomImageUrl(sprite, variant) {
+function localImageUrl(sprite, variant) {
   const overrideKey = `${variant.toLowerCase()}-${sprite.key}`;
-  if (LOCAL_IMAGE_OVERRIDES[overrideKey]) return LOCAL_IMAGE_OVERRIDES[overrideKey];
+  return LOCAL_IMAGE_OVERRIDES[overrideKey] || '';
+}
+
+function fandomImageFileName(sprite, variant) {
   const base = slugFileName(sprite.name);
-  const fileName = variant === 'Base'
+  return variant === 'Base'
     ? `${base}_Sprite_-_Item_-_Fortnite.png`
     : `${variant}_${base}_Sprite_-_Item_-_Fortnite.png`;
-  return `https://fortnite.fandom.com/wiki/Special:Redirect/file/${encodeURIComponent(fileName)}`;
 }
 
 function getSource(sprite, variant) {
@@ -117,11 +119,14 @@ const sprites = BASE_SPRITES.flatMap(sprite => (VARIANT_MAP[sprite.key] || ['Bas
   source: getSource(sprite, variant),
   season: 'Chapter 7 Season 3 — Runners',
   status: variant === 'Holofoil' || variant === 'Gem' ? 'Tracked variant / availability may rotate' : 'Available / tracked',
-  imageUrl: fandomImageUrl(sprite, variant)
+  imageUrl: localImageUrl(sprite, variant),
+  imageFile: fandomImageFileName(sprite, variant)
 })));
 
 const STORAGE_KEY = 'fortnite-sprite-codex-v2';
 const VIEW_KEY = 'fortnite-sprite-view-mode';
+const IMAGE_CACHE_KEY = 'fortnite-sprite-fandom-image-cache-v1';
+let fandomImageCache = loadImageCache();
 let currentVariant = 'All';
 let currentRarity = 'All';
 let showOnlyMissing = false;
@@ -132,6 +137,14 @@ let collection = loadCollection();
 function loadCollection() {
   try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
   catch { return {}; }
+}
+function loadImageCache() {
+  try { return JSON.parse(localStorage.getItem(IMAGE_CACHE_KEY)) || {}; }
+  catch { return {}; }
+}
+function saveImageCache() {
+  try { localStorage.setItem(IMAGE_CACHE_KEY, JSON.stringify(fandomImageCache)); }
+  catch {}
 }
 function saveCollection() { localStorage.setItem(STORAGE_KEY, JSON.stringify(collection)); }
 function isOwned(id) { return Boolean(collection[id]?.owned); }
@@ -161,10 +174,76 @@ function getFilteredSprites() {
 }
 
 function spriteVisual(sprite, size = 'card') {
-  return `<div class="sprite-image-wrap ${size}">
-    <img class="sprite-img" src="${sprite.imageUrl}" alt="${sprite.name}" loading="lazy" onerror="this.closest('.sprite-image-wrap').classList.add('image-failed'); this.remove();" />
+  const cached = sprite.imageUrl || fandomImageCache[sprite.imageFile] || '';
+  const srcAttr = cached ? `src="${cached}"` : '';
+  const localClass = sprite.imageUrl ? 'image-local' : '';
+  return `<div class="sprite-image-wrap ${size} ${localClass}" data-fandom-file="${sprite.imageFile}">
+    <img class="sprite-img" ${srcAttr} alt="${sprite.name}" loading="lazy" referrerpolicy="no-referrer" />
     <div class="fallback-orb"><span>${sprite.icon}</span></div>
   </div>`;
+}
+
+async function resolveFandomImage(fileName) {
+  if (!fileName) return '';
+  if (fandomImageCache[fileName]) return fandomImageCache[fileName];
+
+  const api = `https://fortnite.fandom.com/api.php?action=query&titles=${encodeURIComponent(`File:${fileName}`)}&prop=imageinfo&iiprop=url&format=json&origin=*`;
+  try {
+    const response = await fetch(api);
+    if (!response.ok) throw new Error('Fandom API request failed');
+    const data = await response.json();
+    const pages = data?.query?.pages || {};
+    const firstPage = Object.values(pages)[0];
+    const url = firstPage?.imageinfo?.[0]?.url || '';
+    if (!url) throw new Error('Image URL not found');
+    fandomImageCache[fileName] = url;
+    saveImageCache();
+    return url;
+  } catch {
+    fandomImageCache[fileName] = '';
+    saveImageCache();
+    return '';
+  }
+}
+
+function prepareImageElement(img, wrap) {
+  const fail = () => {
+    wrap.classList.remove('image-loaded');
+    wrap.classList.add('image-failed');
+    img.removeAttribute('src');
+  };
+
+  img.onload = () => {
+    if (img.naturalWidth > 1 && img.naturalHeight > 1) {
+      wrap.classList.add('image-loaded');
+      wrap.classList.remove('image-failed');
+    } else {
+      fail();
+    }
+  };
+  img.onerror = fail;
+
+  if (img.getAttribute('src') && img.complete) {
+    img.onload();
+  }
+}
+
+async function hydrateSpriteImages(root = document) {
+  const wraps = [...root.querySelectorAll('.sprite-image-wrap')];
+  for (const wrap of wraps) {
+    const img = wrap.querySelector('.sprite-img');
+    if (!img) continue;
+    prepareImageElement(img, wrap);
+
+    if (img.getAttribute('src')) continue;
+    const fileName = wrap.dataset.fandomFile;
+    const url = await resolveFandomImage(fileName);
+    if (url) {
+      img.src = url;
+    } else {
+      wrap.classList.add('image-failed');
+    }
+  }
 }
 
 function renderStats() {
@@ -252,6 +331,7 @@ function renderGrid() {
   grid.innerHTML = filtered.length
     ? (viewMode === 'showcase' ? renderShowcase(filtered) : filtered.map(tile).join(''))
     : '<div class="empty">No sprites match this filter.</div>';
+  hydrateSpriteImages(grid);
 }
 
 function openDetail(id) {
@@ -285,6 +365,7 @@ function openDetail(id) {
     </div>
   </div>`;
   const dialog = document.getElementById('spriteDialog');
+  hydrateSpriteImages(document.getElementById('modalContent'));
   if (!dialog.open) dialog.showModal();
 }
 
