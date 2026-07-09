@@ -70,12 +70,194 @@ const GUMMY_SOURCES = {
 };
 
 const LOCAL_IMAGE_OVERRIDES = {
-  'base-peanut': 'assets/sprites/peanut.png',
-  'base-grim-reaper': 'assets/sprites/grim-reaper.png',
-  'gold-grim-reaper': 'assets/sprites/grim-reaper-gold.png',
-  'gummy-grim-reaper': 'assets/sprites/grim-reaper-gummy.png',
-  'galaxy-grim-reaper': 'assets/sprites/grim-reaper-galaxy.png'
+  'base-air': 'assets/sprites/local/base-air.png',
+  'base-aura': 'assets/sprites/local/base-aura.png',
+  'base-boss': 'assets/sprites/local/base-boss.png',
+  'base-demon': 'assets/sprites/local/base-demon.png',
+  'base-dream': 'assets/sprites/local/base-dream.png',
+  'base-duck': 'assets/sprites/local/base-duck.png',
+  'base-earth': 'assets/sprites/local/base-earth.png',
+  'base-fire': 'assets/sprites/local/base-fire.png',
+  'base-fishy': 'assets/sprites/local/base-fishy.png',
+  'base-ghost': 'assets/sprites/local/base-ghost.png',
+  'base-grim-reaper': 'assets/sprites/local/base-grim-reaper.png',
+  'base-king': 'assets/sprites/local/base-king.png',
+  'base-peanut': 'assets/sprites/local/base-peanut.png',
+  'base-punk': 'assets/sprites/local/base-punk.png',
+  'base-seven': 'assets/sprites/local/base-seven.png',
+  'base-striker': 'assets/sprites/local/base-striker.png',
+  'base-water': 'assets/sprites/local/base-water.png',
+  'base-zero-point': 'assets/sprites/local/base-zero-point.png',
+  'galaxy-air': 'assets/sprites/local/galaxy-air.png',
+  'galaxy-aura': 'assets/sprites/local/galaxy-aura.png',
+  'galaxy-boss': 'assets/sprites/local/galaxy-boss.png',
+  'galaxy-demon': 'assets/sprites/local/galaxy-demon.png',
+  'galaxy-dream': 'assets/sprites/local/galaxy-dream.png',
+  'galaxy-duck': 'assets/sprites/local/galaxy-duck.png',
+  'galaxy-earth': 'assets/sprites/local/galaxy-earth.png',
+  'galaxy-fire': 'assets/sprites/local/galaxy-fire.png',
+  'galaxy-fishy': 'assets/sprites/local/galaxy-fishy.png',
+  'galaxy-ghost': 'assets/sprites/local/galaxy-ghost.png',
+  'galaxy-grim-reaper': 'assets/sprites/local/galaxy-grim-reaper.png',
+  'galaxy-king': 'assets/sprites/local/galaxy-king.png',
+  'galaxy-punk': 'assets/sprites/local/galaxy-punk.png',
+  'galaxy-seven': 'assets/sprites/local/galaxy-seven.png',
+  'galaxy-striker': 'assets/sprites/local/galaxy-striker.png',
+  'galaxy-water': 'assets/sprites/local/galaxy-water.png',
+  'galaxy-zero-point': 'assets/sprites/local/galaxy-zero-point.png',
+  'gem-aura': 'assets/sprites/local/gem-aura.png',
+  'gem-demon': 'assets/sprites/local/gem-demon.png',
+  'gem-duck': 'assets/sprites/local/gem-duck.png',
+  'gem-earth': 'assets/sprites/local/gem-earth.png',
+  'gem-punk': 'assets/sprites/local/gem-punk.png',
+  'gem-water': 'assets/sprites/local/gem-water.png',
+  'gem-zero-point': 'assets/sprites/local/gem-zero-point.png',
+  'gold-air': 'assets/sprites/local/gold-air.png',
+  'gold-aura': 'assets/sprites/local/gold-aura.png',
+  'gold-boss': 'assets/sprites/local/gold-boss.png',
+  'gold-demon': 'assets/sprites/local/gold-demon.png',
+  'gold-dream': 'assets/sprites/local/gold-dream.png',
+  'gold-duck': 'assets/sprites/local/gold-duck.png',
+  'gold-earth': 'assets/sprites/local/gold-earth.png',
+  'gold-fire': 'assets/sprites/local/gold-fire.png',
+  'gold-fishy': 'assets/sprites/local/gold-fishy.png',
+  'gold-ghost': 'assets/sprites/local/gold-ghost.png',
+  'gold-grim-reaper': 'assets/sprites/local/gold-grim-reaper.png',
+  'gold-king': 'assets/sprites/local/gold-king.png',
+  'gold-punk': 'assets/sprites/local/gold-punk.png',
+  'gold-seven': 'assets/sprites/local/gold-seven.png',
+  'gold-striker': 'assets/sprites/local/gold-striker.png',
+  'gold-water': 'assets/sprites/local/gold-water.png',
+  'gold-zero-point': 'assets/sprites/local/gold-zero-point.png',
+  'gummy-air': 'assets/sprites/local/gummy-air.png',
+  'gummy-aura': 'assets/sprites/local/gummy-aura.png',
+  'gummy-boss': 'assets/sprites/local/gummy-boss.png',
+  'gummy-demon': 'assets/sprites/local/gummy-demon.png',
+  'gummy-dream': 'assets/sprites/local/gummy-dream.png',
+  'gummy-duck': 'assets/sprites/local/gummy-duck.png',
+  'gummy-earth': 'assets/sprites/local/gummy-earth.png',
+  'gummy-fire': 'assets/sprites/local/gummy-fire.png',
+  'gummy-fishy': 'assets/sprites/local/gummy-fishy.png',
+  'gummy-ghost': 'assets/sprites/local/gummy-ghost.png',
+  'gummy-grim-reaper': 'assets/sprites/local/gummy-grim-reaper.png',
+  'gummy-king': 'assets/sprites/local/gummy-king.png',
+  'gummy-punk': 'assets/sprites/local/gummy-punk.png',
+  'gummy-seven': 'assets/sprites/local/gummy-seven.png',
+  'gummy-striker': 'assets/sprites/local/gummy-striker.png',
+  'gummy-water': 'assets/sprites/local/gummy-water.png',
+  'gummy-zero-point': 'assets/sprites/local/gummy-zero-point.png',
+  'holofoil-air': 'assets/sprites/local/holofoil-air.png',
+  'holofoil-fire': 'assets/sprites/local/holofoil-fire.png',
+  'holofoil-ghost': 'assets/sprites/local/holofoil-ghost.png',
+  'holofoil-king': 'assets/sprites/local/holofoil-king.png',
+  'holofoil-seven': 'assets/sprites/local/holofoil-seven.png',
+  'holofoil-striker': 'assets/sprites/local/holofoil-striker.png',
+  'holofoil-water': 'assets/sprites/local/holofoil-water.png'
 };
+
+const REMOTE_IMAGE_URLS = {
+  'base-water': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Unvault_Ch7S3_ui_L.webp',
+  'gold-water': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Gold_ui_L.webp',
+  'gummy-water': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Candy_ui_L.webp',
+  'galaxy-water': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Galaxy_ui_L.webp',
+  'gem-water': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Gem_ui_L.webp',
+  'holofoil-water': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Holofoil_ui_L.webp',
+
+  'base-earth': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Ch7S3_UI_L.webp',
+  'gold-earth': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Gold_ui_L.webp',
+  'gummy-earth': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Candy_ui_L.webp',
+  'galaxy-earth': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Galaxy_ui_L.webp',
+  'gem-earth': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Gem_ui_L.webp',
+
+  'base-fire': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Unvault_Ch7S3_ui_L.webp',
+  'gold-fire': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Gold_ui_L.webp',
+  'gummy-fire': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Candy_ui_L.webp',
+  'galaxy-fire': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Galaxy_ui_L.webp',
+  'holofoil-fire': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Holofoil_ui_L.webp',
+
+  'base-duck': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Duck_Default_L.webp',
+  'gold-duck': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Duck_Gold_L.webp',
+  'gummy-duck': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Duck_Candy_L.webp',
+  'galaxy-duck': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Duck_Galaxy_L.webp',
+  'gem-duck': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Duck_Gem_L.webp',
+
+  'base-ghost': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Ghost_Unvault_L.webp',
+  'gold-ghost': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Ghost_Gold_L.webp',
+  'gummy-ghost': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Ghost_Candy_L.webp',
+  'galaxy-ghost': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Ghost_Galaxy_L.webp',
+  'holofoil-ghost': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Ghost_Holo_L.webp',
+
+  'base-dream': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Sleepy_ui_L.webp',
+  'gold-dream': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Sleepy_Gold_ui_L.webp',
+  'gummy-dream': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Sleepy_Candy_ui_L.webp',
+  'galaxy-dream': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Sleepy_Galaxy_ui_L.webp',
+
+  'base-demon': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_RedDemon_Default_L.webp',
+  'gold-demon': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_RedDemon_Gold_L.webp',
+  'gummy-demon': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_RedDemon_Candy_L.webp',
+  'galaxy-demon': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_RedDemon_Galaxy_L.webp',
+  'gem-demon': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_RedDemon_Gem_L.webp',
+
+  'base-punk': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Punk_ui_L.webp',
+  'gold-punk': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Punk_Gold_ui_L.webp',
+  'gummy-punk': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Punk_Candy_ui_L.webp',
+  'galaxy-punk': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Punk_Galaxy_ui_L.webp',
+  'gem-punk': 'https://fortnite.gg/img/x/sprites/icons/tmp_punk_gem.webp',
+
+  'base-king': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_King_ui_L.webp',
+  'gold-king': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_King_Gold_ui_L.webp',
+  'gummy-king': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_King_Candy_ui_L.webp',
+  'galaxy-king': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_King_Galaxy_ui_L.webp',
+  'holofoil-king': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_King_Holofoil_ui_L.webp',
+
+  'base-zero-point': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_ui_L.webp',
+  'gold-zero-point': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Gold_ui_L.webp',
+  'gummy-zero-point': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Candy_ui_L.webp',
+  'galaxy-zero-point': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Galaxy_ui_L.webp',
+  'gem-zero-point': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Gem_ui_L.webp',
+
+  'base-peanut': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_BurntPeanut_ui_L.webp',
+
+  'base-fishy': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fishy_ui_L.webp',
+  'gold-fishy': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fishy_Gold_ui_L.webp',
+  'gummy-fishy': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fishy_Candy_ui_L.webp',
+  'galaxy-fishy': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fishy_Galaxy_ui_L.webp',
+
+  'base-striker': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Soccer_ui_L.webp',
+  'gold-striker': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Soccer_Gold_L.webp',
+  'gummy-striker': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Soccer_Candy_L.webp',
+  'galaxy-striker': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Soccer_Galaxy_L.webp',
+  'holofoil-striker': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Soccer_Holofoil_L.webp',
+
+  'base-aura': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Drifter_ui_L.webp',
+  'gold-aura': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Drifter_Gold_ui_L.webp',
+  'gummy-aura': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Drifter_Candy_ui_L.webp',
+  'galaxy-aura': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Drifter_Galaxy_ui_L.webp',
+  'gem-aura': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Drifter_Gem_ui_L.webp',
+
+  'base-boss': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Boss_ui_L.webp',
+  'gold-boss': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Boss_Gold_ui_L.webp',
+  'gummy-boss': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Boss_Candy_ui_L.webp',
+  'galaxy-boss': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Boss_Galaxy_ui_L.webp',
+
+  'base-grim-reaper': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Default_L.webp',
+  'gold-grim-reaper': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Gold_L.webp',
+  'gummy-grim-reaper': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Candy_L.webp',
+  'galaxy-grim-reaper': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Galaxy_L.webp',
+
+  'base-air': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Air_Default_L.webp',
+  'gold-air': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Air_Gold_L.webp',
+  'gummy-air': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Air_Candy_L.webp',
+  'galaxy-air': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Air_Galaxy_L.webp',
+  'holofoil-air': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Air_Holo_L.webp',
+
+  'base-seven': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Seven_ui_L.webp',
+  'gold-seven': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Seven_Gold_ui_L.webp',
+  'gummy-seven': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Seven_Candy_ui_L.webp',
+  'galaxy-seven': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Seven_Galaxy_ui_L.webp',
+  'holofoil-seven': 'https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Seven_Holofoil_ui_L.webp'
+};
+
 
 function cssVariantClass(variant) { return `variant-${variant}`; }
 function cssRarityClass(rarity) { return `rarity-${rarity}`; }
@@ -83,7 +265,7 @@ function slugFileName(name) { return name.replace(/ /g, '_'); }
 
 function localImageUrl(sprite, variant) {
   const overrideKey = `${variant.toLowerCase()}-${sprite.key}`;
-  return LOCAL_IMAGE_OVERRIDES[overrideKey] || '';
+  return LOCAL_IMAGE_OVERRIDES[overrideKey] || REMOTE_IMAGE_URLS[overrideKey] || '';
 }
 
 function fandomImageFileName(sprite, variant) {
@@ -125,7 +307,7 @@ const sprites = BASE_SPRITES.flatMap(sprite => (VARIANT_MAP[sprite.key] || ['Bas
 
 const STORAGE_KEY = 'fortnite-sprite-codex-v2';
 const VIEW_KEY = 'fortnite-sprite-view-mode';
-const IMAGE_CACHE_KEY = 'fortnite-sprite-fandom-image-cache-v1';
+const IMAGE_CACHE_KEY = 'fortnite-sprite-fandom-image-cache-v2';
 let fandomImageCache = loadImageCache();
 let currentVariant = 'All';
 let currentRarity = 'All';
