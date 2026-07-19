@@ -1,16 +1,16 @@
 # Fortnite Sprite Collection
 
-Static personal Fortnite Sprite tracker with all sprite images stored locally.
+Static personal Fortnite Sprite tracker with all released sprites and variants stored locally. The tracked list was synchronized with [Fortnite.GG](https://fortnite.gg/sprites) on 19 July 2026.
 
-## Local PNG images
+## Local images
 
-All 83 tracked sprite entries use files from:
+All tracked sprite entries use PNG or WebP files from:
 
 ```text
 assets/sprites/local/
 ```
 
-The 18 base PNGs were converted from the uploaded `sprites.zip`. Variant PNGs are generated locally from those base sprites so the deployed site does not depend on Fandom, fortnite.gg, or any external image host.
+The deployed site does not depend on Fandom, Fortnite.GG, or any external image host at runtime.
 
 ## Deploy
 

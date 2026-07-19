@@ -1,50 +1,53 @@
 const BASE_SPRITES = [
-  { key: 'water', name: 'Water', rarity: 'Rare', element: 'Water', icon: '💧', ability: 'Replenishes shields while standing in water for you and nearby squad.', dust: 100, drop: '8.73%', source: 'Sprite Chests + standard chests' },
-  { key: 'earth', name: 'Earth', rarity: 'Rare', element: 'Earth', icon: '🌿', ability: 'Increases your chance of finding rare items in chests.', dust: 100, drop: '≈13–14%', source: 'Sprite Chests + standard chests' },
-  { key: 'fire', name: 'Fire', rarity: 'Rare', element: 'Fire', icon: '🔥', ability: 'Creates a fiery burst after dealing enough damage to an enemy.', dust: 100, drop: '~13.92%', source: 'Sprite Chests + standard chests' },
-  { key: 'fishy', name: 'Fishy', rarity: 'Rare', element: 'Water', icon: '🐟', ability: 'Greatly increases swim speed. Taking damage grants a brief movement speed boost.', dust: 100, drop: '~13.79%', source: 'Fishing + Sprite loot sources' },
-  { key: 'air', name: 'Air', rarity: 'Rare', element: 'Air', icon: '🌪️', ability: 'Mobility-focused Sprite from the active Sprite pool.', dust: 100, drop: 'Community estimate', source: 'Sprite Chests + standard chests' },
-
-  { key: 'duck', name: 'Duck', rarity: 'Epic', element: 'Utility', icon: '🦆', ability: 'Emoting or jamming replenishes your shields.', dust: 3000, drop: '~5.22%', source: 'Sprite Chests + standard chests' },
-  { key: 'ghost', name: 'Ghost', rarity: 'Epic', element: 'Stealth', icon: '👻', ability: 'Makes you temporarily invisible while reloading.', dust: 3000, drop: '≈5%', source: 'Sprite Chests + standard chests' },
-  { key: 'demon', name: 'Demon', rarity: 'Epic', element: 'Siphon', icon: '😈', ability: 'Siphons some Health and Shield when you eliminate an opponent.', dust: 3000, drop: '~5.22%', source: 'Sprite Chests + standard chests' },
-  { key: 'king', name: 'King', rarity: 'Epic', element: 'Melee', icon: '👑', ability: 'Increases Pickaxe damage.', dust: 3000, drop: '≈5%', source: 'Sprite Chests + standard chests' },
-  { key: 'aura', name: 'Aura', rarity: 'Epic', element: 'Movement', icon: '✨', ability: 'Grants Shock Rock charges after dealing damage.', dust: 3000, drop: '≈5%', source: 'Sprite Chests + standard chests' },
-  { key: 'striker', name: 'Striker', rarity: 'Epic', element: 'Movement', icon: '⚽', ability: 'Activates Overdrive after mantling, hurdling, or wall scrambling.', dust: 3000, drop: '≈5%', source: 'Soccer Pitch goal + Sprite loot sources' },
-  { key: 'seven', name: 'Seven', rarity: 'Epic', element: 'Special', icon: '⑦', ability: 'Special Chapter 7 themed Sprite from the active collection.', dust: 3000, drop: 'Community estimate', source: 'Sprite Chests + standard chests' },
-
-  { key: 'dream', name: 'Dream', rarity: 'Legendary', element: 'Loot', icon: '🌙', ability: 'Gives a random item each level, with legendary loot awarded at Level 5.', dust: 5000, drop: '≈2–2.6%', source: 'Sprite Chests + standard chests' },
-  { key: 'punk', name: 'Punk', rarity: 'Legendary', element: 'Ammo', icon: '🎸', ability: 'Grants random bonuses, including powerful loot and special effects, from chests.', dust: 5000, drop: '≈2–2.6%', source: 'Sprite Chests + standard chests' },
-  { key: 'boss', name: 'Boss', rarity: 'Legendary', element: 'Tank', icon: '💪', ability: 'Grants an increase to your max HP and Shield.', dust: 5000, drop: '~2.63%', source: 'Boss NPC drops + extraction' },
-
-  { key: 'zero-point', name: 'Zero Point', rarity: 'Mythic', element: 'Bubble', icon: '🌀', ability: 'Spawns a Shield Bubble Jr. when you use a healing item on yourself.', dust: 7500, drop: '0.00034%', source: 'Sprite Chests + standard chests' },
-  { key: 'peanut', name: 'Burnt Peanut', rarity: 'Mythic', element: 'Loot', icon: '🥜', ability: 'May produce bonus loot, including Mythic items, after eliminations.', dust: 7500, drop: '<2%', source: 'Mythic Sprite pool + extraction' },
-  { key: 'grim-reaper', name: 'Grim Reaper', rarity: 'Mythic', element: 'Marking', icon: '💀', ability: 'Marks players who damage you for a duration.', dust: 7500, drop: '0.04% contested', source: 'Mythic Sprite pool + extraction' }
+  { key: 'batman', name: 'Batman', rarity: 'Mythic', element: 'Special', icon: '🦇', ability: 'Batman-themed Sprite from the active collection.', dust: 7500, drop: '2.23%', source: 'Sprite loot sources' },
+  { key: 'water', name: 'Water', rarity: 'Rare', element: 'Water', icon: '💧', ability: 'Replenishes shields while standing in water for you and nearby squad.', dust: 100, drop: '0%', source: 'Sprite Chests + standard chests' },
+  { key: 'earth', name: 'Earth', rarity: 'Rare', element: 'Earth', icon: '🌿', ability: 'Increases your chance of finding rare items in chests.', dust: 100, drop: '0%', source: 'Sprite Chests + standard chests' },
+  { key: 'fire', name: 'Fire', rarity: 'Rare', element: 'Fire', icon: '🔥', ability: 'Creates a fiery burst after dealing enough damage to an enemy.', dust: 100, drop: '0%', source: 'Sprite Chests + standard chests' },
+  { key: 'duck', name: 'Duck', rarity: 'Epic', element: 'Utility', icon: '🦆', ability: 'Emoting or jamming replenishes your shields.', dust: 3000, drop: '9%', source: 'Sprite Chests + standard chests' },
+  { key: 'ghost', name: 'Ghost', rarity: 'Epic', element: 'Stealth', icon: '👻', ability: 'Makes you temporarily invisible while reloading.', dust: 3000, drop: '9%', source: 'Sprite Chests + standard chests' },
+  { key: 'dream', name: 'Dream', rarity: 'Legendary', element: 'Loot', icon: '🌙', ability: 'Gives a random item each level, with legendary loot awarded at Level 5.', dust: 5000, drop: '6.98%', source: 'Sprite Chests + standard chests' },
+  { key: 'demon', name: 'Demon', rarity: 'Epic', element: 'Siphon', icon: '😈', ability: 'Siphons some Health and Shield when you eliminate an opponent.', dust: 3000, drop: '9%', source: 'Sprite Chests + standard chests' },
+  { key: 'punk', name: 'Punk', rarity: 'Legendary', element: 'Ammo', icon: '🎸', ability: 'Grants random bonuses, including powerful loot and special effects, from chests.', dust: 5000, drop: '6.98%', source: 'Sprite Chests + standard chests' },
+  { key: 'king', name: 'King', rarity: 'Epic', element: 'Melee', icon: '👑', ability: 'Increases Pickaxe damage.', dust: 3000, drop: '9%', source: 'Sprite Chests + standard chests' },
+  { key: 'vini-jr', name: 'Vini Jr.', rarity: 'Mythic', element: 'Special', icon: '⚽', ability: 'Vini Jr.-themed Sprite from the active collection.', dust: 7500, drop: '0%', source: 'Special event reward' },
+  { key: 'peanut', name: 'Burnt Peanut', rarity: 'Mythic', element: 'Loot', icon: '🥜', ability: 'May produce bonus loot, including Mythic items, after eliminations.', dust: 7500, drop: '0%', source: 'Mythic Sprite pool + extraction' },
+  { key: 'zero-point', name: 'Zero Point', rarity: 'Mythic', element: 'Bubble', icon: '🌀', ability: 'Spawns a Shield Bubble Jr. when you use a healing item on yourself.', dust: 7500, drop: '0.00093%', source: 'Sprite Chests + standard chests' },
+  { key: 'fishy', name: 'Fishy', rarity: 'Rare', element: 'Water', icon: '🐟', ability: 'Greatly increases swim speed. Taking damage grants a brief movement speed boost.', dust: 100, drop: '0%', source: 'Fishing + Sprite loot sources' },
+  { key: 'striker', name: 'Striker', rarity: 'Epic', element: 'Movement', icon: '⚽', ability: 'Activates Overdrive after mantling, hurdling, or wall scrambling.', dust: 3000, drop: '6.98%', source: 'Soccer Pitch goal + Sprite loot sources' },
+  { key: 'aura', name: 'Aura', rarity: 'Epic', element: 'Movement', icon: '✨', ability: 'Grants Shock Rock charges after dealing damage.', dust: 3000, drop: '6.98%', source: 'Sprite Chests + standard chests' },
+  { key: 'boss', name: 'Boss', rarity: 'Legendary', element: 'Tank', icon: '💪', ability: 'Grants an increase to your max HP and Shield.', dust: 5000, drop: '6.98%', source: 'Boss NPC drops + extraction' },
+  { key: 'grim', name: 'Grim', rarity: 'Mythic', element: 'Marking', icon: '💀', ability: 'Marks players who damage you for a duration.', dust: 7500, drop: '0.09%', source: 'Mythic Sprite pool + extraction' },
+  { key: 'air', name: 'Air', rarity: 'Rare', element: 'Air', icon: '🌪️', ability: 'Mobility-focused Sprite from the active Sprite pool.', dust: 100, drop: '0%', source: 'Sprite Chests + standard chests' },
+  { key: 'seven', name: 'Seven', rarity: 'Legendary', element: 'Special', icon: '⑦', ability: 'Special Chapter 7 themed Sprite from the active collection.', dust: 5000, drop: '6.98%', source: 'Sprite Chests + standard chests' },
+  { key: 'pollo', name: 'Pollo', rarity: 'Mythic', element: 'Special', icon: '🐔', ability: 'Pollo-themed Sprite from the active collection.', dust: 7500, drop: '0%', source: 'Special event reward' }
 ];
 
 // Current obtainable / tracked variants based on the public sprite database list.
 const VARIANT_MAP = {
-  'water': ['Base', 'Gold', 'Gummy', 'Galaxy', 'Gem', 'Holofoil'],
-  'earth': ['Base', 'Gold', 'Gummy', 'Galaxy', 'Gem'],
+  'batman': ['Base', 'Gold', 'Gummy', 'Galaxy', 'Holofoil'],
+  'water': ['Base', 'Gold', 'Gummy', 'Galaxy', 'Holofoil'],
+  'earth': ['Base', 'Gold', 'Gummy', 'Galaxy'],
   'fire': ['Base', 'Gold', 'Gummy', 'Galaxy', 'Holofoil'],
-  'duck': ['Base', 'Gold', 'Gummy', 'Galaxy', 'Gem'],
+  'duck': ['Base', 'Gold', 'Gummy', 'Galaxy'],
   'ghost': ['Base', 'Gold', 'Gummy', 'Galaxy', 'Holofoil'],
   'dream': ['Base', 'Gold', 'Gummy', 'Galaxy'],
-  'demon': ['Base', 'Gold', 'Gummy', 'Galaxy', 'Gem'],
-  'punk': ['Base', 'Gold', 'Gummy', 'Galaxy', 'Gem'],
+  'demon': ['Base', 'Gold', 'Gummy', 'Galaxy'],
+  'punk': ['Base', 'Gold', 'Gummy', 'Galaxy'],
   'king': ['Base', 'Gold', 'Gummy', 'Galaxy', 'Holofoil'],
-  'zero-point': ['Base', 'Gold', 'Gummy', 'Galaxy', 'Gem'],
+  'vini-jr': ['Base'],
+  'zero-point': ['Base', 'Gold', 'Gummy', 'Galaxy'],
   'peanut': ['Base'],
   'fishy': ['Base', 'Gold', 'Gummy', 'Galaxy'],
   'striker': ['Base', 'Gold', 'Gummy', 'Galaxy', 'Holofoil'],
-  'aura': ['Base', 'Gold', 'Gummy', 'Galaxy', 'Gem'],
+  'aura': ['Base', 'Gold', 'Gummy', 'Galaxy'],
   'boss': ['Base', 'Gold', 'Gummy', 'Galaxy'],
-  'grim-reaper': ['Base', 'Gold', 'Gummy', 'Galaxy'],
+  'grim': ['Base', 'Gold', 'Gummy', 'Galaxy'],
   'air': ['Base', 'Gold', 'Gummy', 'Galaxy', 'Holofoil'],
-  'seven': ['Base', 'Gold', 'Gummy', 'Galaxy', 'Holofoil']
+  'seven': ['Base', 'Gold', 'Gummy', 'Galaxy', 'Holofoil'],
+  'pollo': ['Base']
 };
 
-const VARIANTS = ['Base', 'Gold', 'Gummy', 'Galaxy', 'Holofoil', 'Gem'];
+const VARIANTS = ['Base', 'Gold', 'Gummy', 'Galaxy', 'Holofoil'];
 const RARITIES = ['Rare', 'Epic', 'Legendary', 'Mythic'];
 
 const VARIANT_INFO = {
@@ -52,9 +55,24 @@ const VARIANT_INFO = {
   Gold: { label: 'Gold', bonus: 'Premium golden visual variant.', chance: () => 'Well below 1%', dust: sprite => sprite.rarity === 'Mythic' ? 15000 : 4000 },
   Gummy: { label: 'Gummy', bonus: '+10% Sprite Dust bonus when extracting a Sprite.', chance: () => 'Very rare / unknown exact odds', dust: sprite => sprite.rarity === 'Mythic' ? 15000 : 4000 },
   Galaxy: { label: 'Galaxy', bonus: '+20% ammo from every ammo pickup.', chance: () => '≈0.02–0.06%', dust: () => 'Unknown' },
-  Holofoil: { label: 'Holofoil', bonus: 'Holographic premium visual variant.', chance: () => 'New / rotating variant', dust: () => 'Unknown' },
-  Gem: { label: 'Gem', bonus: 'Gemstone premium visual variant.', chance: () => 'New / rotating variant', dust: () => 'Unknown' }
+  Holofoil: { label: 'Holofoil', bonus: 'Holographic premium visual variant.', chance: () => 'Varies by Sprite', dust: () => 'Unknown' }
 };
+
+function currentDropRate(sprite, variant) {
+  if (variant === 'Base') return sprite.drop;
+  if (sprite.key === 'batman') return { Gold: '0.1%', Gummy: '0.07%', Galaxy: '0.04%', Holofoil: '0.01%' }[variant];
+  if (sprite.key === 'zero-point') return { Gold: '0.000041%', Gummy: '0.000031%', Galaxy: '0.000016%' }[variant];
+  if (sprite.key === 'grim') return '0%';
+  if (variant === 'Holofoil') {
+    if (['water', 'fire', 'air'].includes(sprite.key)) return '0.25%';
+    if (['ghost', 'king'].includes(sprite.key)) return '0.06%';
+    if (['striker', 'seven'].includes(sprite.key)) return '0.05%';
+  }
+  if (sprite.rarity === 'Rare') return { Gold: '0.75%', Gummy: '0.62%', Galaxy: '0.5%' }[variant];
+  if (sprite.drop === '9%') return { Gold: '0.4%', Gummy: '0.3%', Galaxy: '0.16%' }[variant];
+  if (sprite.drop === '6.98%') return { Gold: '0.31%', Gummy: '0.23%', Galaxy: '0.12%' }[variant];
+  return '0%';
+}
 
 const GUMMY_SOURCES = {
   fire: 'Urban areas of the map',
@@ -70,6 +88,13 @@ const GUMMY_SOURCES = {
 };
 
 const LOCAL_IMAGE_OVERRIDES = {
+  'base-batman': 'assets/sprites/local/base-batman.webp',
+  'gold-batman': 'assets/sprites/local/gold-batman.webp',
+  'gummy-batman': 'assets/sprites/local/gummy-batman.webp',
+  'galaxy-batman': 'assets/sprites/local/galaxy-batman.webp',
+  'holofoil-batman': 'assets/sprites/local/holofoil-batman.webp',
+  'base-vini-jr': 'assets/sprites/local/base-vini-jr.webp',
+  'base-pollo': 'assets/sprites/local/base-pollo.webp',
   'base-air': 'assets/sprites/local/base-air.png',
   'base-aura': 'assets/sprites/local/base-aura.png',
   'base-boss': 'assets/sprites/local/base-boss.png',
@@ -80,7 +105,7 @@ const LOCAL_IMAGE_OVERRIDES = {
   'base-fire': 'assets/sprites/local/base-fire.png',
   'base-fishy': 'assets/sprites/local/base-fishy.png',
   'base-ghost': 'assets/sprites/local/base-ghost.png',
-  'base-grim-reaper': 'assets/sprites/local/base-grim-reaper.png',
+  'base-grim': 'assets/sprites/local/base-grim.png',
   'base-king': 'assets/sprites/local/base-king.png',
   'base-peanut': 'assets/sprites/local/base-peanut.png',
   'base-punk': 'assets/sprites/local/base-punk.png',
@@ -98,20 +123,13 @@ const LOCAL_IMAGE_OVERRIDES = {
   'galaxy-fire': 'assets/sprites/local/galaxy-fire.png',
   'galaxy-fishy': 'assets/sprites/local/galaxy-fishy.png',
   'galaxy-ghost': 'assets/sprites/local/galaxy-ghost.png',
-  'galaxy-grim-reaper': 'assets/sprites/local/galaxy-grim-reaper.png',
+  'galaxy-grim': 'assets/sprites/local/galaxy-grim.png',
   'galaxy-king': 'assets/sprites/local/galaxy-king.png',
   'galaxy-punk': 'assets/sprites/local/galaxy-punk.png',
   'galaxy-seven': 'assets/sprites/local/galaxy-seven.png',
   'galaxy-striker': 'assets/sprites/local/galaxy-striker.png',
   'galaxy-water': 'assets/sprites/local/galaxy-water.png',
   'galaxy-zero-point': 'assets/sprites/local/galaxy-zero-point.png',
-  'gem-aura': 'assets/sprites/local/gem-aura.png',
-  'gem-demon': 'assets/sprites/local/gem-demon.png',
-  'gem-duck': 'assets/sprites/local/gem-duck.png',
-  'gem-earth': 'assets/sprites/local/gem-earth.png',
-  'gem-punk': 'assets/sprites/local/gem-punk.png',
-  'gem-water': 'assets/sprites/local/gem-water.png',
-  'gem-zero-point': 'assets/sprites/local/gem-zero-point.png',
   'gold-air': 'assets/sprites/local/gold-air.png',
   'gold-aura': 'assets/sprites/local/gold-aura.png',
   'gold-boss': 'assets/sprites/local/gold-boss.png',
@@ -122,7 +140,7 @@ const LOCAL_IMAGE_OVERRIDES = {
   'gold-fire': 'assets/sprites/local/gold-fire.png',
   'gold-fishy': 'assets/sprites/local/gold-fishy.png',
   'gold-ghost': 'assets/sprites/local/gold-ghost.png',
-  'gold-grim-reaper': 'assets/sprites/local/gold-grim-reaper.png',
+  'gold-grim': 'assets/sprites/local/gold-grim.png',
   'gold-king': 'assets/sprites/local/gold-king.png',
   'gold-punk': 'assets/sprites/local/gold-punk.png',
   'gold-seven': 'assets/sprites/local/gold-seven.png',
@@ -139,7 +157,7 @@ const LOCAL_IMAGE_OVERRIDES = {
   'gummy-fire': 'assets/sprites/local/gummy-fire.png',
   'gummy-fishy': 'assets/sprites/local/gummy-fishy.png',
   'gummy-ghost': 'assets/sprites/local/gummy-ghost.png',
-  'gummy-grim-reaper': 'assets/sprites/local/gummy-grim-reaper.png',
+  'gummy-grim': 'assets/sprites/local/gummy-grim.png',
   'gummy-king': 'assets/sprites/local/gummy-king.png',
   'gummy-punk': 'assets/sprites/local/gummy-punk.png',
   'gummy-seven': 'assets/sprites/local/gummy-seven.png',
@@ -179,7 +197,6 @@ function getSource(sprite, variant) {
   if (variant === 'Gold') return `${sprite.source}; Gold variant roll`;
   if (variant === 'Galaxy') return `${sprite.source}; Galaxy variant roll / event windows`;
   if (variant === 'Holofoil') return `${sprite.source}; Holofoil variant pool`;
-  if (variant === 'Gem') return `${sprite.source}; Gem variant pool`;
   return sprite.source;
 }
 
@@ -196,10 +213,10 @@ const sprites = BASE_SPRITES.flatMap(sprite => (VARIANT_MAP[sprite.key] || ['Bas
   ability: sprite.ability,
   bonus: VARIANT_INFO[variant].bonus,
   dust: VARIANT_INFO[variant].dust(sprite),
-  drop: VARIANT_INFO[variant].chance(sprite),
+  drop: currentDropRate(sprite, variant),
   source: getSource(sprite, variant),
   season: 'Chapter 7 Season 3 — Runners',
-  status: variant === 'Holofoil' || variant === 'Gem' ? 'Tracked variant / availability may rotate' : 'Available / tracked',
+  status: variant === 'Holofoil' ? 'Tracked variant / availability may rotate' : 'Available / tracked',
   imageUrl: localImageUrl(sprite, variant),
   imageFile: fandomImageFileName(sprite, variant)
 })));
